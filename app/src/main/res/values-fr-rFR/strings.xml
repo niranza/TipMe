@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TipMe</string>
+    <string name="calculate">calculer</string>
+    <string name="tip_amount">pourboire: %s</string><!-- a sign for currency -->
+    <string name="cost_for_each">Tout le monde paie: %s (Y compris le pourboire)</string>
+    <string name="total_to_pay">Total: %s</string>
+    <string name="ok_service">Ok (15%)</string>
+    <string name="good_service">bon (18%)</string>
+    <string name="amazing_service">exellent (20%)</string>
+    <string name="how_was_the_service">Comment était le service?</string>
+    <string name="cost_of_service">Le coût du service</string>
+    <string name="average_service">moyenne (10%)</string>
+    <string name="split">diviser</string>
+    <string name="how_many_people">nombre de personnes?</string>
+    <string name="choose_your_tip">Choisissez vous-même un pourboire</string>
+    <string name="percent">pourcentage</string>
+    <string name="calculate_your_tip">Calculez votre pourboire</string>
+    <string name="with_tip_time">avec TipMe</string>
+    <string name="text_1">Notez le coût du paiement</string>
+    <string name="text_2">Sélectionnez la qualité de service</string>
+    <string name="text_3">Vous pouvez choisir la somme de pourboire que vous préférez donner %</string>
+    <string name="text_4">Vous pouvez répartir le paiement entre les membres si vous le souhaitez</string>
+    <string name="text_5">Le pourboire et le paiement total sont indiqués ci-dessous</string>
+    <string name="lets_go">en avant</string>
+    <string name="share_text">https://play.google.com/store/apps/details?id=com.logic.tiptime Calculate your tip. easy and simple!</string>
+    <string name="share">partager</string>
+    <string name="help_button">Bouton d\'aide</string>
+</resources>

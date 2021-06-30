@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="com.logic.tiptime.MainViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+            android:padding="16dp"
+            tools:context=".MainActivity">
+
+            <ImageButton
+                android:id="@+id/help_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_shape"
+                android:contentDescription="@string/help_button"
+                android:onClick="@{()->mainViewModel.handleHelpButton()}"
+                android:scaleType="fitCenter"
+                app:backgroundTint="?attr/colorOnPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_help" />
+
+            <ImageView
+                android:id="@+id/icon_cost_of_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                app:layout_constraintBottom_toBottomOf="@id/cost_of_service_edit_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cost_of_service_edit_text"
+                app:srcCompat="@drawable/ic_store" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cost_of_service_edit_text"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:hint="@string/cost_of_service"
+                app:layout_constraintStart_toEndOf="@id/icon_cost_of_service"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cost_of_service_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:text="@={mainViewModel.costOfServiceEditTextContent}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/icon_service_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                app:layout_constraintBottom_toBottomOf="@id/service_question"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/service_question"
+                app:srcCompat="@drawable/ic_service" />
+
+            <TextView
+                android:id="@+id/service_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                android:text="@string/how_was_the_service"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/icon_service_question"
+                app:layout_constraintTop_toBottomOf="@id/cost_of_service_edit_text" />
+
+
+            <RadioGroup
+                android:id="@+id/tip_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkedButton="@={mainViewModel.radioChecked}"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@id/service_question"
+                app:layout_constraintTop_toBottomOf="@id/service_question">
+
+                <RadioButton
+                    android:id="@+id/option_twenty_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->mainViewModel.handleTipOptionRadioButton()}"
+                    android:text="@string/amazing_service" />
+
+                <RadioButton
+                    android:id="@+id/option_eighteen_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->mainViewModel.handleTipOptionRadioButton()}"
+                    android:text="@string/good_service" />
+
+                <RadioButton
+                    android:id="@+id/option_fifteen_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->mainViewModel.handleTipOptionRadioButton()}"
+                    android:text="@string/ok_service" />
+
+                <RadioButton
+                    android:id="@+id/option_ten_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->mainViewModel.handleTipOptionRadioButton()}"
+                    android:text="@string/average_service" />
+
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/icon_choose_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                app:layout_constraintBottom_toBottomOf="@id/choose_percentage_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/choose_percentage_text"
+                app:srcCompat="@drawable/ic_percent" />
+
+            <TextView
+                android:id="@+id/choose_percentage_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                android:text="@string/choose_your_tip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/icon_choose_percentage"
+                app:layout_constraintTop_toBottomOf="@id/tip_options" />
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/choose_your_percentage_edit_text"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/percent"
+                app:layout_constraintBottom_toBottomOf="@id/choose_percentage_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toEndOf="@id/choose_percentage_text"
+                app:layout_constraintTop_toTopOf="@id/choose_percentage_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/choose_your_percentage_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:text="@={mainViewModel.chooseTipEditTextContent}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/icon_split"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                app:layout_constraintBottom_toBottomOf="@id/split_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/split_text"
+                app:srcCompat="@drawable/ic_split" />
+
+            <TextView
+                android:id="@+id/split_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                android:text="@string/split"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/icon_split"
+                app:layout_constraintTop_toBottomOf="@id/choose_percentage_text" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/how_many_people_edit_text"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/how_many_people"
+                app:layout_constraintBottom_toBottomOf="@id/split_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toEndOf="@id/split_text"
+                app:layout_constraintTop_toTopOf="@id/split_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/how_many_people_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:text="@={mainViewModel.splitEditTextContent}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/calculate_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:onClick="@{() -> mainViewModel.handleCalculateButton()}"
+                android:text="@string/calculate"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/split_text" />
+
+            <TextView
+                android:id="@+id/tip_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                android:text="@{mainViewModel.tipResultTextContent}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/calculate_button"
+                tools:text="Tip Amount: 10$" />
+
+            <TextView
+                android:id="@+id/cost_for_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                android:text="@{mainViewModel.costForOneTextContent}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tip_result"
+                tools:text="Each Pays (with tip): 15$" />
+
+            <!-- ca-app-pub-9481603234309027/6636303766 -->
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{()->mainViewModel.onCloseKeyboard()}"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+                ads:layout_constraintBottom_toBottomOf="parent"
+                ads:layout_constraintEnd_toEndOf="parent"
+                ads:layout_constraintStart_toStartOf="parent"
+                ads:layout_constraintTop_toBottomOf="@id/cost_for_one" />
+
+
+            <!-- welcome screen -->
+            <RelativeLayout
+                android:id="@+id/layout_welcome_screen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->mainViewModel.handleWelcomeScreen()}"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="700dp"
+                    android:alpha="0.9"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_background" />
+
+                <!-- body -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- title -->
+                    <RelativeLayout
+                        android:id="@+id/layout_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/calculate_your_tip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:text="@string/calculate_your_tip"
+                            android:textSize="35sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/calculate_your_tip"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:text="@string/with_tip_time"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+                    <!-- enter cost of service -->
+                    <RelativeLayout
+                        android:id="@+id/layout_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/ic_dot" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:text="@string/text_1"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+                    <!-- Choose quality of service -->
+                    <RelativeLayout
+                        android:id="@+id/layout_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/ic_dot" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:text="@string/text_2"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+                    <!-- Switch to choose your preferred tip percentage % -->
+                    <RelativeLayout
+                        android:id="@+id/layout_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/ic_dot" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:text="@string/text_3"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+                    <!-- Split the cost equally between friends -->
+                    <RelativeLayout
+                        android:id="@+id/layout_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/ic_dot" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:text="@string/text_4"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+                    <!-- click on CALCULATE. the tip and total payment appears below -->
+                    <RelativeLayout
+                        android:id="@+id/layout_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/ic_dot" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:text="@string/text_5"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+                    <!-- LETS GO -->
+                    <RelativeLayout
+                        android:id="@+id/layout_lets_go"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/lets_go"
+                            android:textSize="50sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

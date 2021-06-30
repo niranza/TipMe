@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">TipMe</string>
+    <string name="calculate">calculate</string>
+    <string name="tip_amount">Tip amount: %s</string><!-- a sign for currency -->
+    <string name="cost_for_each">Each pays: %s (with tip)</string>
+    <string name="total_to_pay">Total to pay: %s</string>
+    <string name="ok_service">Ok (15%)</string>
+    <string name="good_service">Good (18%)</string>
+    <string name="amazing_service">Amazing (20%)</string>
+    <string name="how_was_the_service">How was the service?</string>
+    <string name="cost_of_service">Cost of Service</string>
+    <string name="average_service">Average (10%)</string>
+    <string name="split">Split</string>
+    <string name="how_many_people">How many people?</string>
+    <string name="choose_your_tip">Choose Your Tip</string>
+    <string name="percent">percent</string>
+    <string name="calculate_your_tip">Calculate Your Tip</string>
+    <string name="with_tip_time">With TipMe</string>
+    <string name="text_1">Enter cost of service</string>
+    <string name="text_2">Choose the quality of service</string>
+    <string name="text_3">you can choose your preferred tip percentage %</string>
+    <string name="text_4">Split the cost equally between friends, if you want</string>
+    <string name="text_5">The tip and total payment appears below</string>
+    <string name="lets_go">LET\'S GO</string>
+    <string name="share_text">https://play.google.com/store/apps/details?id=com.logic.tiptime Calculate your tip. easy and simple!</string>
+    <string name="share">Share</string>
+    <string name="help_button">help Button</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TipMe</string>
+    <string name="calculate">חשב</string>
+    <string name="tip_amount">טיפ: %s</string><!-- a sign for currency -->
+    <string name="cost_for_each">כל אחד משלם: %s (כולל טיפ)</string>
+    <string name="total_to_pay">סך הכל: %s</string>
+    <string name="ok_service">בסדר (15%)</string>
+    <string name="good_service">טוב (18%)</string>
+    <string name="amazing_service">מדהים (20%)</string>
+    <string name="how_was_the_service">איך היה השירות?</string>
+    <string name="cost_of_service">עלות השירות</string>
+    <string name="average_service">ממוצע (10%)</string>
+    <string name="split">לחלק</string>
+    <string name="how_many_people">כמה אנשים?</string>
+    <string name="choose_your_tip">בחר טיפ בעצמך</string>
+    <string name="percent">אחוז</string>
+    <string name="calculate_your_tip">חשב את הטיפ שלך</string>
+    <string name="with_tip_time">עם TipMe</string>
+    <string name="text_1">כתוב/תי את עלות התשלום</string>
+    <string name="text_2">בחר/י את איכות השירות</string>
+    <string name="text_3">אפשר לבחור כמה טיפ מעדיפים לתת %</string>
+    <string name="text_4">אפשר לחלק את  התשלום בין חברים במידה ורוצים</string>
+    <string name="text_5">הטיפ והתשלום הכולל מופיעים מטה</string>
+    <string name="lets_go">קדימה</string>
+    <string name="share_text">https://play.google.com/store/apps/details?id=com.logic.tiptime Calculate your tip. easy and simple!</string>
+    <string name="share">שתף</string>
+    <string name="help_button">כפתור עזרה</string>
+</resources>
