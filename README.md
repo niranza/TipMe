@@ -1,2 +1,2 @@
-TipMe
+# TipMe
 Application for Tip Calculation
